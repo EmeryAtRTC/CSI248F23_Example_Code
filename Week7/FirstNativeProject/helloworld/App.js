@@ -1,8 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Button,
+  TextInput,
+} from "react-native";
+import { useState } from "react";
 //All of useState, useEffect,
 
 export default function App() {
+  const [input, setInput] = useState("");
   return (
     // Your main parent component should be wrapped in SafeAreaView. This will appear the same on
     //Android as IOS
@@ -23,6 +32,10 @@ export default function App() {
         <Text>Section 3</Text>
         <Text>Section 3</Text>
         <Text>Section 3</Text>
+      </View>
+      <View style={styles.section4}>
+        <TextInput onChangeText={(text) => setInput(text)}></TextInput>
+        <Button onPress={() => console.warn(input)} title="Click Me"></Button>
       </View>
     </SafeAreaView>
   );
