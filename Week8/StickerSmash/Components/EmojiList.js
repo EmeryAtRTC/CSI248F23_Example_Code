@@ -12,12 +12,20 @@ export default function EmojiList({ onSelect, onCloseModal }) {
   ]);
 
   return (
+    // FlatList is a component that renders a list of items
+    // horizontal means the list will be horizontal
+    // showsHorizontalScrollIndicator means the scroll bar will be visible on web
+    // data is the array of images
+    // contentContainerStyle is the style of the container
+    // renderItem is a function that renders each item in the list similar to .map()
     <FlatList
       horizontal
       showsHorizontalScrollIndicator={Platform.OS === 'web'}
       data={emoji}
       contentContainerStyle={styles.listContainer}
       renderItem={({ item, index }) => {
+        // For each image in the image array we will render a pressable containing the image
+        //when the image is clicked we will call on select and pass the image, we will also close the modal
         return (
           <Pressable
             onPress={() => {

@@ -3,14 +3,17 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function EmojiPicker({ isVisible, children, onClose }) {
   return (
+    // Here is the modal that contains the emoji list
     <Modal animationType="slide" transparent={true} visible={isVisible}>
       <View style={styles.modalContent}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Choose a sticker</Text>
+          {/* Close botton */}
           <Pressable onPress={onClose}>
             <MaterialIcons name="close" color="#fff" size={22} />
           </Pressable>
         </View>
+        {/* Here is where the emojiList will be rendered */}
         {children}
       </View>
     </Modal>
